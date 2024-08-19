@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Page</title>
+    <link rel="stylesheet" th:href="@{/css/pages/post_page_style.css}" />
+</head>
+<body>
+<div id="test-tag-container">
+    <p>
+        non-loaded
+    </p>
+</div>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<script type="module" th:src="@{/js/custom_tags_lib.js}"></script>
+<script th:src="@{/js/react-prod/post_page.bundle.js}"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization Page</title>
+</head>
+<body>
+<div th:replace="fragments/navigation :: header"></div>
+<nav>
+    <div class="nav">
+        <p class="nav__title">Авторизация</p>
+        <p class="nav__additional" th:text="${current_form}">-</p>
+    </div>
+</nav>
+<main>
+    <div class="main">
+        <div class="main__login">
+            <form method="post" th:action="@{/authorization}" class="login-block">
+                <label for="log-username">Логин</label>
+                <input type="text" name="log-username" id="log-username" />
+                <label for="log-password">Пароль</label>
+                <input type="password" name="log-password" id="log-password" />
+                <input type="submit" value="Войти" />
+                <span>Еще нет аккаунта? <a href="/authorization?form=register">Зарегистрируйтесь</a></span>
+            </form>
+        </div>
+        <div class="main__register">
+            <form method="post" th:action="@{/authorization/register}" id="register-form">
+                <label for="reg-username">Логин*</label>
+                <input type="text" name="reg-username" id="reg-username" />
+                <label for="reg-name">Имя</label>
+                <input type="text" name="reg-name" id="reg-name" />
+                <label for="reg-surname">Фамилия</label>
+                <input type="text" name="reg-surname" id="reg-surname" />
+                <label for="reg-password">Пароль*</label>
+                <input type="text" name="reg-password" id="reg-password" />
+                <label for="reg-repeat-password">Повтор пароля*</label>
+                <input type="text" name="reg-repeat-password" id="reg-repeat-password" />
+                <input type="submit" value="Зарегистрироваться" />
+                <span>Уже есть аккаунт? <a href="/authorization?form=login">Войдите</a></span>
+            </form>
+        </div>
+    </div>
+</main>
+<div th:replace="fragments/footer :: footer"></div>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<script th:src="@{/js/authorization.js}"></script>
+</body>
+</html>
