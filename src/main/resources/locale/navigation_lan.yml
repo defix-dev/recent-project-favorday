@@ -1,0 +1,14 @@
+ru:
+  header_input-placeholder: "Введите ключевое слово..."
+  aside_nav-recommendations: "Рекомендации"
+  aside_nav-leaderboard: "Лидерборд"
+  aside_nav-random-moment: "Случайный момент"
+  aside_personal-publications: "Мои публикации"
+  aside_personal-auth: "Авторизоваться"
+en:
+  header_input-placeholder: "Enter keyword..."
+  aside_nav-recommendations: "Recommendations"
+  aside_nav-leaderboard: "Leaderboard"
+  aside_nav-random-moment: "Random moment"
+  aside_personal-publications: "My publications"
+  aside_personal-auth: "Authorize"

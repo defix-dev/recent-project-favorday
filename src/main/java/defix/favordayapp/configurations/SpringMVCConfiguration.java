@@ -1,28 +1,25 @@
 package defix.favordayapp.configurations;
 
-import defix.favordayapp.services.localization.Language;
-import defix.favordayapp.services.localization.PersonalLocale;
-import defix.favordayapp.services.localization.utils.LanguageParameterInterceptor;
+import defix.favordayapp.services.localization.configuration.LocalizationConfiguration;
+import defix.favordayapp.services.localization.configuration.LocalizationSessionConfiguration;
+import defix.favordayapp.services.localization.configuration.LocalizationUriConfiguration;
+import defix.favordayapp.services.localization.utils.LocalizationPrefixCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-import java.util.Arrays;
-import java.util.stream.Collectors;
 
 @Configuration
 public class SpringMVCConfiguration implements WebMvcConfigurer {
-    private final PersonalLocale personalLocale;
+    private final LocalizationConfiguration configuration;
 
     @Autowired
-    public SpringMVCConfiguration(PersonalLocale personalLocale) {
-        this.personalLocale = personalLocale;
+    public SpringMVCConfiguration(LocalizationConfiguration configuration) {
+        this.configuration = configuration;
     }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //registry.addInterceptor(new LanguageParameterInterceptor(personalLocale));
+        registry.addInterceptor(new LocalizationPrefixCreator(configuration.getSessionConfiguration(), configuration.getUriConfiguration()));
     }
 }

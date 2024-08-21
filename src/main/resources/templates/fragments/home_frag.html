@@ -6,10 +6,26 @@
 </head>
 <body>
 <div th:fragment="content">
+    <script>
+        function setEngLang(lang) {
+            fetch('/localization/configuration/set_language', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    lang: lang
+                })
+            }).then(response => {
+                window.location.href="/home";
+            });
+        }
+    </script>
     <div class="start-view">
-        <span class="start-view__title">Делись. Смотри. Оценивай.</span>
-        <span class="start-view__additional-text">Вы можете сделать лишь один пост,<br/>постарайтесь ;)</span>
-        <a th:href="@{/create_post}" class="start-view__button">Создать публикацию</a>
+        <span class="start-view__title" th:text="${home_lang_words.get('st-view_title')}">Делись. Смотри. Оценивай.</span>
+        <span class="start-view__additional-text" th:text="${home_lang_words.get('st-view_additional')}"}>Вы можете сделать лишь один пост,<br/>постарайтесь ;)</span>
+        <input type="button" onclick="setEngLang('ru')" class="start-view__button" th:value="${home_lang_words.get('st-view_button')}" />
+        <input type="button" onclick="setEngLang('en')" class="start-view__button" th:value="${home_lang_words.get('st-view_button')}" />
     </div>
 </div>
 </body>

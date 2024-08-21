@@ -4,6 +4,8 @@ import lombok.Getter;
 
 @Getter
 public enum Language {
+    DEFAULT("ru"),
+
     ENGLISH("en"),
     RUSSIAN("ru");
 

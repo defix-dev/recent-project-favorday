@@ -10,7 +10,8 @@ public enum PageConstants {
     SEARCH("search"),
     RECOMMENDATIONS("recommendations"),
     AUTHORIZATION("authorization"),
-    POST_PAGE("post_page");
+    POST_PAGE("post_page"),
+    NAVIGATION("navigation");
 
     private final String pageName;
 

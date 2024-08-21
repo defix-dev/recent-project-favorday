@@ -13,7 +13,7 @@
             <a th:href="@{/home}" class="header__logo"><img th:src="@{/images/navigation/header/logo.png}" alt="LOGO"/></a>
             <div class="header__search">
                 <form class="search-block">
-                    <input type="search" placeholder="Введите ключевое слово..." class="search-block__input"/>
+                    <input type="search" th:placeholder="${navigation_lang_words.get('header_input-placeholder')}" class="search-block__input"/>
                     <a th:href="@{/search}" class="search-block__button"><img
                             th:src="@{/images/navigation/header/search.png}"/></a>
                 </form>
@@ -29,26 +29,26 @@
                     <li class="navigation__button">
                         <a th:href="@{/recommendations}">
                             <img alt="btn-logo" th:src="@{/images/navigation/aside/recommendations.png}"/>
-                            <span>Рекомендации</span>
+                            <span th:text="${navigation_lang_words.get('aside_nav-recommendations')}">Рекомендации</span>
                         </a>
                     </li>
                     <li class="navigation__button">
                         <a th:href="@{/leaderboard}">
                             <img alt="btn-logo" th:src="@{/images/navigation/aside/leaderboard.png}"/>
-                            <span>Лидерборд</span>
+                            <span th:text="${navigation_lang_words.get('aside_nav-leaderboard')}">Лидерборд</span>
                         </a>
                     </li>
                     <li class="navigation__button">
                         <a th:href="@{/random_moment}">
                             <img alt="btn-logo" th:src="@{/images/navigation/aside/random_moment.png}"/>
-                            <span>Случайный момент</span>
+                            <span th:text="${navigation_lang_words.get('aside_nav-random-moment')}">Случайный момент</span>
                         </a>
                     </li>
                 </ul>
             </div>
             <div class="person-actions">
-                <a th:href="@{/profile/post}" class="person-actions__button">Мои публикации</a>
-                <a href="/authorization?form=register" class="person-actions__button person-actions__button--with-bg">Авторизоваться</a>
+                <a th:href="@{/profile/post}" class="person-actions__button" th:text="${navigation_lang_words.get('aside_personal-publications')}">Мои публикации</a>
+                <a href="/authorization?form=register" class="person-actions__button person-actions__button--with-bg" th:text="${navigation_lang_words.get('aside_personal-auth')}">Авторизоваться</a>
             </div>
         </div>
     </aside>
