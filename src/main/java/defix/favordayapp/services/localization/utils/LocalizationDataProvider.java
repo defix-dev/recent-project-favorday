@@ -20,8 +20,6 @@ public class LocalizationDataProvider {
     }
 
     public Map<String, String> getWordsDict(String language, String pageName) {
-        Map<String, String> words = new HashMap<>();
-
         Yaml yaml = new Yaml();
         InputStream stream = getClass().getClassLoader()
                 .getResourceAsStream(pathConfiguration.getLocalizationsPath()
