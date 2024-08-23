@@ -46,9 +46,6 @@ public class AccountService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
 
-        System.out.println(account.getUsername());
-        System.out.println(account.getPassword());
-
         return account;
     }
 

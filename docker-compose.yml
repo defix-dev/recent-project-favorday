@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  sqlDB:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "root"
+      POSTGRES_DB: "favordayDB"
+    ports:
+      - "5432:5432"
+  web:
+    image: favorday-container:latest
+    environment:
+      DB_HOST: "sqlDB"
+      DB_PORT: "5432"
+      DB_USERNAME: "postgres"
+      DB_PASSWORD: "root"
+      DB_NAME: "favordayDB"
+    ports:
+      - "7777:7777"
+    depends_on:
+      - sqlDB
