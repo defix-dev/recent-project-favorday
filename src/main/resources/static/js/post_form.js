@@ -17,7 +17,6 @@ $(document).ready(() => {
             }
         };
 
-
         $.ajax({
             url: `post_form/create_post?confirm=${toBoolean(formData.get("confirm-value"))}`,
             type: "POST",

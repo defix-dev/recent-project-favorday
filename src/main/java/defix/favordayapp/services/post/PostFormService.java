@@ -1,7 +1,6 @@
 package defix.favordayapp.services.post;
 
-import defix.favordayapp.db.entity.Account;
-import defix.favordayapp.db.mongodb.entity.Post;
+import defix.favordayapp.db.postgresql.entity.Account;
 import defix.favordayapp.services.account.AccountService;
 import defix.favordayapp.services.post.exceptions.UnConfirmedStateException;
 import org.springframework.beans.factory.annotation.Autowired;

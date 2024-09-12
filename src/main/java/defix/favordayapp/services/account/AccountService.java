@@ -1,8 +1,8 @@
 package defix.favordayapp.services.account;
 
-import defix.favordayapp.db.entity.Account;
-import defix.favordayapp.db.entity.Role;
-import defix.favordayapp.db.repositories.AccountRepository;
+import defix.favordayapp.db.postgresql.entity.Account;
+import defix.favordayapp.db.postgresql.entity.Role;
+import defix.favordayapp.db.postgresql.repositories.AccountRepository;
 import defix.favordayapp.services.account.exceptions.AccountAlreadyExistsException;
 import defix.favordayapp.services.account.exceptions.PasswordDoNotMatchException;
 import defix.favordayapp.services.account.exceptions.UnCorrectAccountDataException;
@@ -12,12 +12,9 @@ import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
 
 import defix.favordayapp.services.account.exceptions.UnauthorizedAccountException;
-import org.apache.tomcat.util.http.parser.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

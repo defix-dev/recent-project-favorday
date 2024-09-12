@@ -1,0 +1,7 @@
+@function pxToRem($px, $base_px: 16px) {
+  @return $px / $base_px * 1rem;
+}
+
+@function percentageToRem($per, $base_px: 16px) {
+  @return ($per * 1px) / $base_px * 1rem
+}

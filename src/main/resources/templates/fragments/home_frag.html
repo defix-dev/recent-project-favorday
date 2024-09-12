@@ -6,26 +6,33 @@
 </head>
 <body>
 <div th:fragment="content">
-    <script>
-        function setEngLang(lang) {
-            fetch('/localization/configuration/set_language', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    lang: lang
-                })
-            }).then(response => {
-                window.location.href="/home";
-            });
-        }
-    </script>
-    <div class="start-view">
-        <span class="start-view__title" th:text="${home_lang_words.get('st-view_title')}">Делись. Смотри. Оценивай.</span>
-        <span class="start-view__additional-text" th:text="${home_lang_words.get('st-view_additional')}"}>Вы можете сделать лишь один пост,<br/>постарайтесь ;)</span>
-        <input type="button" onclick="setEngLang('ru')" class="start-view__button" th:value="${home_lang_words.get('st-view_button')}" />
-        <input type="button" onclick="setEngLang('en')" class="start-view__button" th:value="${home_lang_words.get('st-view_button')}" />
+    <link rel="stylesheet" th:href="@{/css/pages/home_style.css}" />
+    <div class="grid-container">
+        <div class="section-panel msg grid-container__msg1">
+            <span class="title-txt">Напишите о своем лучшем дне в жизни</span>
+            <span class="additional-txt">У вас распаряжении более 1500+ слов, не сдерживайте себя!</span>
+        </div>
+        <div class="section-panel grid-container__msg1-photo">
+
+        </div>
+        <div class="section-panel msg grid-container__msg2">
+            <span class="title-txt">Смотрите лучшие моменты других людей</span>
+            <span class="additional-txt">Используйте вкладку “рекомендации” для просмотра лучших моментов</span>
+        </div>
+        <div class="section-panel grid-container__msg2-photo">
+
+        </div>
+        <div class="section-panel grid-container__msg3">
+            <span class="title-txt">Выбивайтесь в топ и получайте награды</span>
+            <div class="section-panel grid-container__msg3-photo">
+
+            </div>
+            <span class="additional-txt">Благодаря системе оценки, вы можете получать щедрые награды при нахождении в топе 10 историй</span>
+        </div>
+        <div class="section-panel grid-container__msg4">
+            <span class="title-txt">И многое-многое другое, скорее присоединяйся к нам!</span>
+            <a class="create-post-btn" href="#">Создать пост</a>
+        </div>
     </div>
 </div>
 </body>

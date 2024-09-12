@@ -1,0 +1,93 @@
+@import "../functions/calculate_funcs.scss";
+@import "../variables";
+@import "../functions/position_funcs";
+
+@mixin button_s1_bg($bg_color: $general-color) {
+  background-color: transparent;
+  border: pxToRem(1px) solid $bg_color;
+  border-radius: pxToRem(5px);
+  @include toFlexCenter;
+}
+
+@mixin button_s1_content($font-size: 16px) {
+  font-size: pxToRem($font-size);
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@mixin button_s2_bg($bg_color: $aside-nav-btn-color) {
+  background-color: $bg_color;
+  border-radius: pxToRem(8px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: pxToRem(1px) solid transparent;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    border-color: $aside-nav-stroke;
+  }
+}
+
+@mixin button_s2_content($font-size: 13px) {
+  font-size: $font-size;
+  color: white;
+  font-weight: 500;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  padding: pxToRem(11px);
+  width: pxToRem(180px);
+}
+
+@mixin button_s3_bg($bg-color: $general-color) {
+  @include button_s1_bg($bg-color);
+  transition: all 0.25s ease-in-out;
+
+  &:hover {
+    background-color: $aside-personal-btn-color;
+  }
+}
+
+@mixin button_s3_content($font-size: 12px) {
+  @include button_s1_content($font-size);
+  color: white;
+
+  &:hover {
+    color: black;
+  }
+}
+
+@mixin personal_nav_button_bg_template() {
+  background-color: $general-color;
+  border-radius: pxToRem(10px);
+}
+
+@mixin personal_nav_button_bg($end) {
+  transition: all 0.1s ease-in-out;
+  border: pxToRem(1px) solid $aside-personal-btn-color;
+  @include personal_nav_button_bg_template();
+  @if($end == false) {
+    border-bottom-left-radius: pxToRem(3px);
+    border-bottom-right-radius: pxToRem(3px);
+  }
+  @else {
+    margin-top: pxToRem(10px);
+    border-top-left-radius: pxToRem(3px);
+    border-top-right-radius: pxToRem(3px);
+  }
+  @include toFlexCenter;
+  padding-bottom: pxToRem(10px);
+  padding-top: pxToRem(10px);
+  text-decoration: none;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+@mixin personal_nav_button_content($font-size: 15px) {
+  color: white;
+  font-weight: 500;
+  font-size: $font-size;
+}

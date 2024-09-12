@@ -10,9 +10,9 @@
         <property name="connection.password">root</property>
         <property name="show_sql">true</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping class="defix.favordayapp.db.entity.Account" />
-        <mapping class="defix.favordayapp.db.entity.AccountRole" />
-        <mapping class="defix.favordayapp.db.entity.AccountRoleId" />
-        <mapping class="defix.favordayapp.db.entity.Role" />
+        <mapping class="defix.favordayapp.db.postgresql.entity.Account" />
+        <mapping class="defix.favordayapp.db.postgresql.entity.AccountRole" />
+        <mapping class="defix.favordayapp.db.postgresql.entity.AccountRoleId" />
+        <mapping class="defix.favordayapp.db.postgresql.entity.Role" />
     </session-factory>
 </hibernate-configuration>

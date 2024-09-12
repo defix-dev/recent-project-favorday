@@ -1,15 +1,18 @@
+@import "./functions/calculate_funcs";
+
 //general
-$general-orange: #D7503E;
-$general-bg: #1A1A1A;
+$bg: #111111;
+$general-color: #D7503E;
+$general-radius: pxToRem(15px);
 
 //header
-$header-bg: #222222;
-$header-search-bg: transparent;
-$header-search-stroke: #3C3C3C;
-$header-search-placeholder-color: #4C4C4C;
-$header-stroke: #383838;
+$header-bg: #2D2727;
 
 //aside
-$aside-bg: $header-bg;
-$aside-nav-button-bg: #272727;
-$aside-stroke: $header-stroke;
+$aside-bg: #211C1C;
+$aside-nav-btn-color: #352929;
+$aside-nav-stroke: #483C3C;
+$aside-personal-btn-color: $general-color;
+
+//main
+$main-bg: #211C1C;

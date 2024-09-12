@@ -51,7 +51,7 @@ public class WebSecurityConfiguration {
         http.addFilterBefore(prefixRemoveFilter.getFilter(), UsernamePasswordAuthenticationFilter.class)
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(httpRequests ->
-                        httpRequests.requestMatchers("/localization/**", "/favicon.ico", "/authorization/**", "/home", "/recommendations/**", "/", "/js/**", "/images/**", "/css/**")
+                        httpRequests.requestMatchers("/localization/**", "/authorization/**", "/home", "/recommendations/**", "/", "/js/**", "/images/**", "/css/**")
                                 .permitAll().anyRequest().authenticated())
                 .formLogin(login ->
                         login.loginPage("/authorization")

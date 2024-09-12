@@ -9,6 +9,13 @@ services:
       POSTGRES_DB: "favordayDB"
     ports:
       - "5432:5432"
+    volumes:
+      - psql_db:/data/db
+  nosqlDB:
+    image: mongodb/mongodb-community-server
+    container_name: "mongodb"
+    ports:
+      - "27017:27017"
   web:
     image: favorday-container:latest
     environment:
@@ -17,7 +24,15 @@ services:
       DB_USERNAME: "postgres"
       DB_PASSWORD: "root"
       DB_NAME: "favordayDB"
+      MONGO_HOST: "nosqlDB"
+      MONGO_PORT: "27017"
+      MONGO_PASSWORD: "root"
+      MONGO_DB: "favordayDB"
     ports:
       - "7777:7777"
     depends_on:
       - sqlDB
+      - nosqlDB
+
+volumes:
+  psql_db:
