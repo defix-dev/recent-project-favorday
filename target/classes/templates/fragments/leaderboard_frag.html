@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaderboard Frag</title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="page-title">
+        <span>Leaderboard</span>
+    </div>
+    <div th:each="account : ${leaderboardInfo}" id="leaderboard-content">
+        <span>Автор: <span th:text="${account.author}"></span></span>
+        <span>Количество голосов: <span th:text="${account.voiceCount}"></span></span>
+        <span>Айди поста: <span th:text="${account.postId}"></span></span>
+        <hr/>
+        <!--<span th:text="${account.getAuthor()}"></span>-->
+    </div>
+</div>
+</body>
+</html>

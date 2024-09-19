@@ -1,0 +1,42 @@
+ru:
+  sign-in-title: Авторизация
+  sign-in-login: Логин
+  sign-in-password: Пароль
+  sign-in-enter-button: Войти
+  sign-in-enter-other-button: Войти с помощью сторонних сервисов
+  sign-up-title: Регистрация
+  sign-up-login: Логин
+  sign-up-name: Имя
+  sign-up-surname: Фамилия
+  sign-up-password: Пароль
+  sign-up-repeat-password: Повторите пароль
+  sign-up-enter-button: Зарегистрироваться
+  sign-up-enter-other-button: Войти с помощью сторонних сервисов
+en:
+  sign-in-title: Authorization
+  sign-in-login: Login
+  sign-in-password: Password
+  sign-in-enter-button: Login
+  sign-in-enter-other-button: Sign in using third-party services
+  sign-up-title: Registration
+  sign-up-login: Login
+  sign-up-name: Name
+  sign-up-surname: Surname
+  sign-up-password: Password
+  sign-up-repeat-password: Repeat password
+  sign-up-enter-button: Register
+  sign-up-enter-other-button: Sign in using third-party services
+jpn:
+  sign-in-title: 承認
+  sign-in-login: ログイン
+  sign-in-password: パスワード
+  sign-in-enter-button: ログイン
+  sign-in-enter-other-button: サードパーティのサービスを使用してサインインします
+  sign-up-title: 登録
+  sign-up-login: ログイン
+  sign-up-name: 名前
+  sign-up-surname: 姓
+  sign-up-password: パスワード
+  sign-up-repeat-password: パスワードを繰り返します
+  sign-up-enter-button: 登録
+  sign-up-enter-other-button: サードパーティのサービスを使用してサインインします

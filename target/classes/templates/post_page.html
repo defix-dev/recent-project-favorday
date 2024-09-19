@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${postInfo.getTitle()}">Post Page</title>
+    <link rel="stylesheet" th:href="@{/css/pages/post_page_style.css}" />
+</head>
+<style>
+    html {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    html {
+        height: 100%;
+    }
+</style>
+<body>
+<div class="p-header">
+    <span>Название: <span th:text="${postInfo.getTitle()}"></span></span><br/>
+    <span>Автор: <span th:text="${postInfo.getAuthor()}"></span></span><br/>
+    <span>Голосов: <span th:text="${postInfo.getVoiceCount()}"></span></span><br/>
+    <span>Теги: <span th:each="tag : ${postInfo.getTags()}"><span th:text="${tag}"></span></span></span>
+</div><br/>
+<div class="p-content">
+    <span th:text="${postInfo.getContent()}"></span>
+</div>
+<div class="p-actions">
+    <a href="#">Голосовать за историю</a>
+</div>
+<div class="p-feedback-input">
+    <form method="post" th:action="@{/posts/{postId}/publish(postId=${postId})}">
+        <label for="feedback-input">Форма заполнения комментария</label><br/>
+        <textarea name="feedback-input" id="feedback-input" placeholder="Введите комментарий..."></textarea>
+        <input type="submit" value="Отправить" />
+    </form>
+</div>
+<div class="p-feedback-content" th:each="feedback : ${feedbacksInfo}">
+    <span>Автор: <span th:text="${feedback.publisher}"></span></span><br/>
+    <span>Комментарий: <span th:text="${feedback.feedback}"></span> | <span th:text="${feedback.publishDate}"></span></span>
+    <hr/>
+</div>
+<!--<div id="test-tag-container">
+    <p>
+        non-loaded
+    </p>
+</div>-->
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<script type="module" th:src="@{/js/custom_tags_lib.js}"></script>
+<script th:src="@{/js/react-prod/post_page.bundle.js}"></script>
+</body>
+</html>

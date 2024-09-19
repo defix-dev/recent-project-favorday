@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header Fragment</title>
+</head>
+<body>
+<!-- CONTENT FRAG NAME -> FOLDER - FRAGMENTS/{FRAG_NAME} -->
+<div th:fragment="navigation(content_frag_name)" class="header_nav">
+    <link rel="stylesheet" th:href="@{/css/elements/navigation.css}">
+    <script th:src="@{/js/navigation.js}" defer></script>
+    <header>
+        <div class="header">
+            <div class="header__left">
+                <a th:href="@{/home}" class="header__logo"><img th:src="@{/images/navigation/header/logo.png}" alt="LOGO"/></a>
+            </div>
+            <div class="header__right">
+                <span class="right-item header__language-select-button" th:text="${lang}">Русский</span>
+                <div class="header__language-select-pan">
+                    <ul class="language-select">
+                        <li class="language-select__item" id="ru"><span>Русский</span></li>
+                        <li class="language-select__item" id="en"><span>English</span></li>
+                        <li class="language-select__item" id="jpn"><span>日本語</span></li>
+                    </ul>
+                </div>
+                <a th:href="@{/profile}" class="right-item header__profile"><img th:src="@{/images/navigation/header/profile.png}"
+                                                                      alt="PROFILE"/></a>
+            </div>
+        </div>
+    </header>
+    <div class="flex-container">
+        <aside>
+            <div class="aside">
+                <div class="navigation">
+                    <ul>
+                        <li class="navigation__button">
+                            <a th:href="@{/recommendations}">
+                                <div class="nav-icon">
+                                    <img alt="btn-logo" th:src="@{/images/navigation/aside/recommendations.png}"/>
+                                </div>
+                                <span th:text="${navigation_lang_words.get('aside_nav-recommendations')}">Рекомендации</span>
+                            </a>
+                        </li>
+                        <li class="navigation__button">
+                            <a th:href="@{/leaderboard}">
+                                <div class="nav-icon">
+                                    <img alt="btn-logo" th:src="@{/images/navigation/aside/leaderboard.png}"/>
+                                </div>
+                                <span th:text="${navigation_lang_words.get('aside_nav-leaderboard')}">Лидерборд</span>
+                            </a>
+                        </li>
+                        <li class="navigation__button">
+                            <a th:href="@{/random_moment}">
+                                <div class="nav-icon">
+                                    <img alt="btn-logo" th:src="@{/images/navigation/aside/random_moment.png}"/>
+                                </div>
+                                <span th:text="${navigation_lang_words.get('aside_nav-random-moment')}">Случайный момент</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="person-actions">
+                    <a th:href="@{/profile/post}" class="person-actions__button"
+                       th:text="${navigation_lang_words.get('aside_personal-publications')}">Мои публикации</a>
+                    <a href="/authorization?form=register"
+                       class="person-actions__button person-actions__button--with-bg"
+                       th:text="${navigation_lang_words.get('aside_personal-auth')}">Авторизоваться</a>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div class="main">
+                <div th:replace="${content_frag_name} :: content"></div>
+            </div>
+        </main>
+        <div th:replace="fragments/fonts :: fonts"></div>
+    </div>
+</div>
+</body>
+</html>

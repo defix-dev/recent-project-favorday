@@ -1,0 +1,24 @@
+@import "./functions/calculate_funcs";
+
+//general
+$bg: #111111;
+$general-color: #D7503E;
+$general-radius: pxToRem(10px);
+
+//header
+$header-bg: #2D2727;
+
+//aside
+$aside-bg: #211C1C;
+$aside-nav-btn-color: #352929;
+$aside-nav-stroke: #483C3C;
+$aside-personal-btn-color: $general-color;
+
+//main
+$main-bg: #211C1C;
+$main-width: pxToRem(995px);
+
+//other
+$page-title-stroke: #4C3A3A;
+$input-bg: #352929;
+$title-stroke_two: #3C3131;

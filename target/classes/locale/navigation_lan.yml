@@ -1,0 +1,21 @@
+ru:
+  header_input-placeholder: Введите ключевое слово...
+  aside_nav-recommendations: Рекомендации
+  aside_nav-leaderboard: Лидерборд
+  aside_nav-random-moment: Случайный момент
+  aside_personal-publications: Мои публикации
+  aside_personal-auth: Авторизоваться
+en:
+  header_input-placeholder: Enter keyword...
+  aside_nav-recommendations: Recommendations
+  aside_nav-leaderboard: Leaderboard
+  aside_nav-random-moment: Random moment
+  aside_personal-publications: My publications
+  aside_personal-auth: Authorize
+jpn:
+  header-input-placeholder: キーワードを入力します。..
+  aside_nav-recommendations: 推奨事項
+  aside_nav-leaderboard: リーダーボード
+  aside_nav-random-moment: ランダムな瞬間
+  aside_personal-publications: 私の出版物
+  aside_personal-auth: ログイン

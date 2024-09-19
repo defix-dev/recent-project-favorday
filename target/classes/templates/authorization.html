@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorization Page</title>
+    <link rel="stylesheet" th:href="@{/css/pages/authorization_style.css}"/>
+</head>
+<body>
+<span class="favorday-id-logo">Favorday ID</span>
+<div class="side-button side-button--left">
+    <img th:src="@{/images/register_icon.png}" alt="REGISTER_US" />
+</div>
+
+<div class="side-button side-button--right">
+    <img th:src="@{/images/sign_in_icon.png}" alt="SIGN-IN" />
+</div>
+<main>
+    <div class="main">
+        <div class="main__sign-in">
+            <span class="auth-title" th:text="${authorization_lang_words.get('sign-in-title')}">Авторизация</span>
+            <form method="post" th:action="@{/authorization}" class="sign-in-container">
+                <div class="auth-input">
+                    <label for="log-username" th:text="${authorization_lang_words.get('sign-in-login')}">Логин</label>
+                    <input type="text" name="log-username" id="log-username"/>
+                </div>
+                <div class="auth-input">
+                    <label for="log-password" th:text="${authorization_lang_words.get('sign-in-password')}">Пароль</label>
+                    <input type="password" name="log-password" id="log-password"/>
+                </div>
+                <input type="submit" th:value="${authorization_lang_words.get('sign-in-enter-button')}" class="auth-button"/>
+                <button class="auth-button" th:text="${authorization_lang_words.get('sign-in-enter-other-button')}">Войти с помощью сторонних сервисов</button>
+            </form>
+        </div>
+        <div class="main__sign-up">
+            <span class="auth-title" th:text="${authorization_lang_words.get('sign-up-title')}">Регистрация</span>
+            <form method="post" th:action="@{/authorization/register}" class="sign-up-container">
+                <div class="auth-input">
+                    <label for="reg-username" th:text="${authorization_lang_words.get('sign-up-login')}">Логин*</label>
+                    <input type="text" name="reg-username" id="reg-username"/>
+                </div>
+                <div class="sign-up-container__double">
+                    <div class="auth-input">
+                        <label for="reg-name" th:text="${authorization_lang_words.get('sign-up-name')}">Имя</label>
+                        <input type="text" name="reg-name" id="reg-name"/>
+                    </div>
+                    <div class="auth-input">
+                        <label for="reg-surname" th:text="${authorization_lang_words.get('sign-up-surname')}">Фамилия</label>
+                        <input type="text" name="reg-surname" id="reg-surname"/>
+                    </div>
+                </div>
+                <div class="auth-input">
+                    <label for="reg-password" th:text="${authorization_lang_words.get('sign-up-password')}">Пароль*</label>
+                    <input type="password" name="reg-password" id="reg-password"/>
+                </div>
+                <div class="auth-input">
+                    <label for="reg-repeat-password" th:text="${authorization_lang_words.get('sign-up-repeat-password')}">Повтор пароля*</label>
+                    <input type="password" name="reg-repeat-password" id="reg-repeat-password"/>
+                </div>
+                <input type="submit" th:value="${authorization_lang_words.get('sign-up-enter-button')}" class="auth-button"/>
+                <button class="auth-button" th:text="${authorization_lang_words.get('sign-up-enter-other-button')}">Войти с помощью сторонних сервисов</button>
+            </form>
+        </div>
+    </div>
+</main>
+<script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+<script th:src="@{/js/authorization.js}"></script>
+<div th:replace="fragments/fonts :: fonts"></div>
+</body>
+</html>
