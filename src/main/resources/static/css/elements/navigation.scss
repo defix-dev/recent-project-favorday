@@ -1,5 +1,6 @@
 @import "../other/base_elements";
 @import "../functions/font_funcs";
+@import "../other/default_elements";
 
 html, body {
   background-color: $bg;
@@ -34,9 +35,95 @@ header {
   justify-content: space-between;
   align-items: center;
 
-  &__logo {
-    margin-left: pxToRem(30px);
+  &__language-select-pan {
+    background-color: $header-bg;
+    position: absolute;
+    border-radius: $general-radius;
+    z-index: 999;
 
+    .language-select {
+      margin: 0;
+      list-style: none;
+      font-size: pxToRem(12px);
+      padding: pxToRem(5px);
+
+      &__item {
+        padding-bottom: pxToRem(5px);
+        height: auto;
+        width: pxToRem(130px);
+        text-align: center;
+        color: white;
+        @include border(0, 0, 0, pxToRem(1px), $title-stroke_two);
+        margin-bottom: pxToRem(5px);
+
+        &:last-child {
+          margin-bottom: 0;
+          border: none;
+          padding-bottom: 0;
+        }
+
+        &:hover {
+          cursor: pointer;
+
+          span {
+            background-color: $page-title-stroke;
+          }
+        }
+
+        span {
+          display: block;
+          width: 100%;
+          border-radius: $general-radius;
+          padding-bottom: pxToRem(5px);
+          padding-top: pxToRem(5px);
+        }
+      }
+    }
+  }
+
+  &__left {
+
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .right-item {
+    margin-right: pxToRem(30px);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__language-select-button {
+    cursor: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    font-size: pxToRem(16px);
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: pxToRem(20px);
+      height: pxToRem(20px);
+      background-image: url("../../images/down_icon.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      vertical-align: middle;
+      margin-left: pxToRem(10px);
+    }
+  }
+
+  &__logo {
     img {
       width: auto;
       height: pxToRem(30px);
@@ -44,8 +131,6 @@ header {
   }
 
   &__profile {
-    margin-right: pxToRem(30px);
-
     img {
       width: pxToRem(40px);
       height: pxToRem(40px);
@@ -58,11 +143,12 @@ header {
   width: pxToRem(1280px);
   max-width: pxToRem(1280px);
   justify-content: space-between;
-  margin-top: pxToRem(20px);
+  margin-top: pxToRem(25px);
 }
 
 .aside {
-  height: pxToRem(600px);
+  transition: filter 0.2s ease-in-out;
+  height: pxToRem(500px);
   width: pxToRem(250px);
   background-color: $aside-bg;
   border-radius: $general-radius;
@@ -144,7 +230,7 @@ header {
     margin-bottom: pxToRem(15px);
 
     a {
-      @include personal_nav_button_content();
+      @include personal_nav_button_content(13px);
 
       &:first-child {
         @include personal_nav_button_bg(false);
@@ -158,6 +244,9 @@ header {
 }
 
 .main {
-  margin-left: pxToRem(20px);
+  transition: filter 0.2s ease-in-out;
+  margin-left: pxToRem(25px);
   margin-bottom: pxToRem(60px);
+  height: auto;
+  width: $main-width;
 }

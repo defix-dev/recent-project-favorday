@@ -1,0 +1,8 @@
+@import "../functions/calculate_funcs";
+
+@mixin border($left, $right, $top, $bottom, $color) {
+  border: $top solid $color;
+  border-right-width: $right;
+  border-bottom-width: $bottom;
+  border-left-width: $left;
+}

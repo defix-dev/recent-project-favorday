@@ -1,0 +1,42 @@
+ru:
+  title: Форма заполнения поста
+  form-title: Заголовок
+  form-title-placeholder: Введите заголовок...
+  form-shortPart-placeholder: Введите короткую часть...
+  form-content-placeholder: Введите основную часть...
+  form-shortPart: Краткая часть
+  form-content: Основная часть
+  settings-title: Настройки
+  settings-disallow-rate-param: Запретить оценивание
+  settings-disallow-comments-param: Запретить комментарии
+  settings-anonymous-param: Полная анонимность
+  confirm-checkbox: Подтверждение
+  confirm-button: Опубликовать
+en:
+  title: The form for filling out the post
+  form-title: Title
+  form-shortPart: Short part
+  form-content: Main part
+  settings-title: Settings
+  settings-disallow-rate-param: Prohibit rating
+  settings-disallow-comments-param: Prohibit comments
+  settings-anonymous-param: Complete anonymity
+  confirm-checkbox: Confirmation
+  confirm-button: Publish
+  form-title-placeholder: Enter the title...
+  form-shortPart-placeholder: Enter the short part...
+  form-content-placeholder: Enter the main part...
+jpn:
+  title: 投稿に記入するためのフォーム
+  form-title: タイトル
+  form-title-placeholder: タイトルを入力します。。。
+  form-shortPart-placeholder: 短い部分を入力します。。。
+  form-content-placeholder: メインパーツを入力します。。。
+  form-shortPart: 短い部分
+  form-content: 主要部分
+  settings-title: 設定
+  settings-disallow-rate-param: 評価を禁止する
+  settings-disallow-comments-param: コメントを禁止する
+  settings-anonymous-param: 完全な匿名性
+  confirm-checkbox: 確認
+  confirm-button: 公開

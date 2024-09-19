@@ -3,7 +3,7 @@
   width: auto;
   height: auto;
   padding: 1.25rem;
-  border-radius: 0.9375rem;
+  border-radius: 0.625rem;
 }
 
 .title-txt {
@@ -19,12 +19,11 @@
 }
 
 .grid-container {
-  width: calc(100% - 1.25rem);
   height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "msg1 msg1p" "msg2p msg1p" "msg2p msg2" "msg3 msg3" "msg4 msg4";
-  gap: 1.25rem;
+  gap: 0.625rem;
 }
 .grid-container__msg1 {
   grid-area: msg1;
@@ -59,6 +58,10 @@
   align-items: center;
 }
 .grid-container__msg4 .create-post-btn {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   font-size: 1.25rem;
   color: white;
   font-weight: 500;

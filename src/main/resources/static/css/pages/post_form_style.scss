@@ -1,0 +1,85 @@
+@import "../elements/repeated_elems";
+@import "../other/base_elements";
+
+.post-form {
+  &__double-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: pxToRem(10px);
+    margin-bottom: pxToRem(10px);
+  }
+
+  .settings-title {
+    display: inline-block;
+    font-size: pxToRem(16px);
+    color: white;
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+    margin-top: pxToRem(25px);
+    margin-bottom: pxToRem(17px);
+    margin-left: pxToRem(15px);
+  }
+
+  .settings {
+    padding: 0;
+    margin: 0;
+
+    &__param {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: $main-bg;
+      color: white;
+      border-radius: $general-radius;
+      padding: pxToRem(15px);
+      margin-bottom: pxToRem(10px);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      label {
+        font-size: pxToRem(16px);
+      }
+
+      input {
+        width: pxToRem(20px);
+        height: pxToRem(20px);
+        background-color: $input-bg;
+        border-radius: pxToRem(5px);
+      }
+    }
+  }
+
+  .post-form__publish-panel-layout {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    .post-form__publish-panel {
+      display: flex;
+      flex-direction: column;
+      width: pxToRem(330px);
+      height: auto;
+      color: white;
+      padding: pxToRem(15px);
+      background-color: $main-bg;
+      border-radius: $general-radius;
+      margin-top: pxToRem(50px);
+    }
+  }
+
+  .post-form__confirm {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: pxToRem(10px);
+  }
+
+  .post-form__publish {
+    @include button_s3_content(15px);
+    @include button_s3_bg();
+    padding: pxToRem(15px);
+  }
+}

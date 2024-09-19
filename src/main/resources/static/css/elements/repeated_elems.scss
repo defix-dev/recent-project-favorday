@@ -1,0 +1,57 @@
+@import "../functions/calculate_funcs";
+@import "../variables";
+@import "../functions/font_funcs";
+
+.page-title {
+  width: 100%;
+  border: pxToRem(2px) solid $page-title-stroke;
+  border-left-width: 0;
+  border-top-width: 0;
+  border-right-width: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: pxToRem(8px);
+  margin-bottom: pxToRem(35px);
+
+  span {
+    font-size: pxToRem(24px);
+    color: white;
+    font-weight: 500;
+  }
+}
+
+.input-panel {
+  display: flex;
+  flex-direction: column;
+  background-color: $main-bg;
+  border-radius: $general-radius;
+  justify-content: center;
+  padding: pxToRem(12px);
+
+  label {
+    font-weight: 500;
+    font-size: pxToRem(15px);
+    color: white;
+    width: auto;
+    margin-bottom: pxToRem(15px);
+  }
+
+  input, textarea {
+    background-color: $input-bg;
+    border-radius: pxToRem(7px);
+    outline: none;
+    border: none;
+    padding: pxToRem(9px);
+    color: white;
+    @include connectMonserratFont;
+
+    &::placeholder {
+      color: rgba(white, 0.25);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+}

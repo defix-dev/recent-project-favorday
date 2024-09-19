@@ -25,7 +25,7 @@ public class AuthorizationController {
 
     @GetMapping
     public String authorizationPage(Model model) {
-        loader.load(PageConstants.NAVIGATION, model);
+        loader.load(PageConstants.AUTHORIZATION, model);
         return RedirectAdapter.changePage(PageConstants.AUTHORIZATION);
     }
 

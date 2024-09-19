@@ -1,6 +1,7 @@
 @import "../functions/calculate_funcs.scss";
 @import "../variables";
 @import "../functions/position_funcs";
+@import "../functions/font_funcs";
 
 @mixin button_s1_bg($bg_color: $general-color) {
   background-color: transparent;
@@ -10,6 +11,7 @@
 }
 
 @mixin button_s1_content($font-size: 16px) {
+  @include connectMonserratFont;
   font-size: pxToRem($font-size);
   color: white;
   font-weight: 500;
@@ -86,7 +88,7 @@
   }
 }
 
-@mixin personal_nav_button_content($font-size: 15px) {
+@mixin personal_nav_button_content($font-size: 16px) {
   color: white;
   font-weight: 500;
   font-size: $font-size;

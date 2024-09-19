@@ -23,8 +23,6 @@
 }
 
 .grid-container {
-  $mw: pxToRem(20px);
-  width: unquote("calc(100% - #{$mw})");
   height: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -34,7 +32,7 @@
               "msg2p msg2"
               "msg3 msg3"
               "msg4 msg4";
-  gap: pxToRem(20px);
+  gap: pxToRem(10px);
 
   &__msg1 {
     grid-area: msg1;

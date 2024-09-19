@@ -32,6 +32,7 @@ public class PostFormController {
     @GetMapping
     public String postForm(Model model) {
         loader.load(PageConstants.NAVIGATION, model);
+        loader.load(PageConstants.POST_FORM, model);
         return RedirectAdapter.changePage(PageConstants.POST_FORM);
     }
 

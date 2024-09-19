@@ -34,15 +34,83 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-.header__logo {
-  margin-left: 1.875rem;
+.header__language-select-pan {
+  background-color: #2D2727;
+  position: absolute;
+  border-radius: 0.625rem;
+  z-index: 999;
+}
+.header__language-select-pan .language-select {
+  margin: 0;
+  list-style: none;
+  font-size: 0.75rem;
+  padding: 0.3125rem;
+}
+.header__language-select-pan .language-select__item {
+  padding-bottom: 0.3125rem;
+  height: auto;
+  width: 8.125rem;
+  text-align: center;
+  color: white;
+  border: 0 solid #3C3131;
+  border-right-width: 0;
+  border-bottom-width: 0.0625rem;
+  border-left-width: 0;
+  margin-bottom: 0.3125rem;
+}
+.header__language-select-pan .language-select__item:last-child {
+  margin-bottom: 0;
+  border: none;
+  padding-bottom: 0;
+}
+.header__language-select-pan .language-select__item:hover {
+  cursor: pointer;
+}
+.header__language-select-pan .language-select__item:hover span {
+  background-color: #4C3A3A;
+}
+.header__language-select-pan .language-select__item span {
+  display: block;
+  width: 100%;
+  border-radius: 0.625rem;
+  padding-bottom: 0.3125rem;
+  padding-top: 0.3125rem;
+}
+.header__right {
+  display: flex;
+  justify-content: space-around;
+}
+.header .right-item {
+  margin-right: 1.875rem;
+}
+.header .right-item:last-child {
+  margin-right: 0;
+}
+.header__language-select-button {
+  cursor: none;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+}
+.header__language-select-button:hover {
+  cursor: pointer;
+}
+.header__language-select-button:after {
+  content: "";
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-image: url("../../images/down_icon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-left: 0.625rem;
 }
 .header__logo img {
   width: auto;
   height: 1.875rem;
-}
-.header__profile {
-  margin-right: 1.875rem;
 }
 .header__profile img {
   width: 2.5rem;
@@ -54,14 +122,15 @@ header {
   width: 80rem;
   max-width: 80rem;
   justify-content: space-between;
-  margin-top: 1.25rem;
+  margin-top: 1.5625rem;
 }
 
 .aside {
-  height: 37.5rem;
+  transition: filter 0.2s ease-in-out;
+  height: 31.25rem;
   width: 15.625rem;
   background-color: #211C1C;
-  border-radius: 0.9375rem;
+  border-radius: 0.625rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -146,7 +215,7 @@ header {
 .aside .person-actions a {
   color: white;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 13px;
 }
 .aside .person-actions a:first-child {
   transition: all 0.1s ease-in-out;
@@ -185,8 +254,11 @@ header {
 }
 
 .main {
-  margin-left: 1.25rem;
+  transition: filter 0.2s ease-in-out;
+  margin-left: 1.5625rem;
   margin-bottom: 3.75rem;
+  height: auto;
+  width: 62.1875rem;
 }
 
 /*# sourceMappingURL=navigation.css.map */

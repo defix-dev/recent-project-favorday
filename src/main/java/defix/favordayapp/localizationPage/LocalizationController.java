@@ -14,8 +14,8 @@ import java.util.Map;
 @RequestMapping("/localization")
 public class LocalizationController {
     @PostMapping("/configuration/set_language")
-    public ResponseEntity<Void> setLanguage(@RequestBody Map<String, String> language, HttpSession session) {
-        session.setAttribute("lang", language.get("lang"));
+    public ResponseEntity<Void> setLanguage(@RequestParam("lang") String language, HttpSession session) {
+        session.setAttribute("lang", language);
         return ResponseEntity.ok().build();
     }
 }

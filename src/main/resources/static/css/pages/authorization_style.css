@@ -1,0 +1,214 @@
+.auth-button {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  height: auto;
+  background-color: #D7503E;
+  border-radius: 0.625rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 0.9375rem;
+  font-weight: 500;
+}
+.auth-button:last-child {
+  margin-bottom: 0;
+}
+
+.auth-input {
+  max-width: 100%;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #211C1C;
+  border-radius: 0.625rem;
+  padding: 0.75rem;
+  margin-bottom: 0.9375rem;
+}
+.auth-input input {
+  all: unset;
+  background-color: #352929;
+  border-radius: 0.3125rem;
+  height: 2.1875rem;
+  text-indent: 0.75rem;
+}
+.auth-input label {
+  margin-top: 0.3125rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.auth-title {
+  max-width: 100%;
+  width: 100%;
+  padding-bottom: 1.125rem;
+  padding-top: 1.125rem;
+  text-align: center;
+  border: 0.0625rem solid #3C3131;
+  border-radius: 0.625rem;
+  margin-bottom: 0.9375rem;
+  font-size: 1.25rem;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #111111;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.main {
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main__sign-up {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.main__sign-up .sign-up-container {
+  width: 29.375rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.main__sign-up .sign-up-container__double {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  align-items: center;
+  grid-auto-rows: 1fr;
+  gap: 0.9375rem;
+}
+.main__sign-in {
+  height: auto;
+  display: none;
+  flex-direction: column;
+}
+
+@keyframes signIn_Out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100vw) scale(0);
+  }
+}
+@keyframes signIn_In {
+  from {
+    opacity: 0;
+    transform: scale(0) translateX(-100vw);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+@keyframes signUp_Out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100vw) scale(0);
+  }
+}
+@keyframes signUp_In {
+  from {
+    opacity: 0;
+    transform: scale(0) translateX(100vw);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+.signIn_Out {
+  position: absolute;
+  animation: signIn_Out 0.5s;
+}
+
+.signIn_In {
+  animation: signIn_In 0.5s;
+}
+
+.signUp_Out {
+  position: absolute;
+  animation: signUp_Out 0.5s;
+}
+
+.signUp_In {
+  animation: signUp_In 0.5s;
+}
+
+.favorday-id-logo {
+  display: inline-block;
+  position: absolute;
+  background-color: #2D2727;
+  padding: 1.125rem;
+  border-radius: 0.625rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  left: 1.5625rem;
+  top: 1.5625rem;
+}
+.favorday-id-logo:before {
+  content: "";
+  display: inline-block;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  vertical-align: middle;
+  background-image: url("../../images/favorday_id_logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-right: 0.625rem;
+}
+
+.side-button {
+  position: absolute;
+  height: 21.875rem;
+  width: auto;
+  border: 0.0625rem solid #D7503E;
+  border-radius: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem;
+  top: calc(50% - 10.9375rem);
+  transition: all 0.25s ease-in-out;
+  z-index: 999;
+}
+.side-button img {
+  filter: invert(43%) sepia(76%) saturate(2978%) hue-rotate(338deg) brightness(90%) contrast(86%);
+  width: 1.875rem;
+  height: 1.875rem;
+}
+.side-button--left {
+  left: 1.5625rem;
+}
+.side-button--right {
+  right: 1.5625rem;
+}
+.side-button:hover {
+  background-color: #D7503E;
+}
+.side-button:hover img {
+  filter: none;
+}
+
+/*# sourceMappingURL=authorization_style.css.map */

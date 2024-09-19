@@ -6,28 +6,48 @@
 </head>
 <body>
 <div th:fragment="content">
-    <form method="post" th:action="@{/post_form/create_post}" id="post-form">
-        <label for="title-field">Заголовок</label>
-        <input type="text" name="title-field" id="title-field"/>
-        <label for="short-part-field">Краткая часть</label>
-        <textarea name="short-part-field" id="short-part-field" placeholder="..."></textarea>
-        <label for="content-field">Основная часть</label>
-        <textarea name="content-field" id="content-field" placeholder="..."></textarea>
-        <label for="settings">Настройки</label>
-        <ul id="settings">
-            <li><label for="anonymous-param">Полная анонимность</label><input type="checkbox" name="anonymous-param"
-                                                                              id="anonymous-param"/></li>
-            <li><label for="disallow-comments-param">Запретить комментарии</label><input type="checkbox"
-                                                                                         name="disallow-comments-param"
-                                                                                         id="disallow-comments-param"/>
+    <div class="page-title">
+        <span th:text="${post_form_lang_words.get('title')}">Форма заполнения поста</span>
+    </div>
+    <form method="post" th:action="@{/post_form/create_post}" class="post-form">
+        <div class="post-form__double-input">
+            <div class="input-panel post-form__title">
+                <label for="title-field" th:text="${post_form_lang_words.get('form-title')}">Заголовок<span style="color:#D7503E">*</span></label>
+                <input type="text" th:placeholder="${post_form_lang_words.get('form-title-placeholder')}" name="title-field" id="title-field"/>
+            </div>
+            <div class="input-panel post-form__short-part">
+                <label for="short-part-field" th:text="${post_form_lang_words.get('form-shortPart')}">Краткая часть<span style="color:#D7503E">*</span></label>
+                <input type="text" th:placeholder="${post_form_lang_words.get('form-shortPart-placeholder')}" name="short-part-field" id="short-part-field"></input>
+            </div>
+        </div>
+        <div class="input-panel post-form__content-part">
+            <label for="content-field" th:text="${post_form_lang_words.get('form-content')}">Основная часть<span style="color:#D7503E">*</span></label>
+            <textarea name="content-field" th:placeholder="${post_form_lang_words.get('form-content-placeholder')}" id="content-field"></textarea>
+        </div>
+        <label for="settings" class="settings-title" th:text="${post_form_lang_words.get('settings-title')}">Настройки</label>
+        <ul class="settings" id="settings">
+            <li class="settings__param">
+                <label for="anonymous-param" th:text="${post_form_lang_words.get('settings-anonymous-param')}">Полная анонимность</label>
+                <input type="checkbox" name="anonymous-param" id="anonymous-param"/>
             </li>
-            <li><label for="disallow-rate-param">Запретить оценивание</label><input type="checkbox"
-                                                                                    name="disallow-rate-param"
-                                                                                    id="disallow-rate-param"/></li>
+            <li class="settings__param">
+                <label for="disallow-comments-param" th:text="${post_form_lang_words.get('settings-disallow-comments-param')}">Запретить комментарии</label>
+                <input type="checkbox" name="disallow-comments-param" id="disallow-comments-param"/>
+            </li>
+            <li class="settings__param">
+                <label for="disallow-rate-param" th:text="${post_form_lang_words.get('settings-disallow-rate-param')}">Запретить оценивание</label>
+                <input type="checkbox" name="disallow-rate-param" id="disallow-rate-param"/>
+            </li>
         </ul>
-        <label for="confirm-value">Подтверждение</label>
-        <input type="checkbox" name="confirm-value" id="confirm-value"/>
-        <input type="submit" value="Опубликовать"/>
+        <div class="post-form__publish-panel-layout">
+            <div class="post-form__publish-panel">
+                <div class="post-form__confirm">
+                    <label for="confirm-value" th:text="${post_form_lang_words.get('confirm-checkbox')}">Подтверждение</label>
+                    <input type="checkbox" name="confirm-value" id="confirm-value"/>
+                </div>
+                <input type="submit" th:value="${post_form_lang_words.get('confirm-button')}" class="post-form__publish"/>
+            </div>
+        </div>
     </form>
 </div>
 </body>
