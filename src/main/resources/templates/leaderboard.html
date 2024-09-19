@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Leaderboard Page</title>
+    <link rel="stylesheet" th:href="@{/css/pages/leaderboard_style.css}" />
+    <script th:src="@{/js/react-prod/leaderboard.bundle.js}"></script>
 </head>
 <body>
-<h1>Leaderboard</h1>
-<div th:each="account : ${leaderboardInfo}" id="leaderboard-content">
-    <span>Автор: <span th:text="${account.author}"></span></span>
-    <span>Количество голосов: <span th:text="${account.voiceCount}"></span></span>
-    <span>Айди поста: <span th:text="${account.postId}"></span></span>
-    <hr/>
-    <!--<span th:text="${account.getAuthor()}"></span>-->
-</div>
+<div th:replace="fragments/navigation :: navigation('fragments/leaderboard_frag')"></div>
 </body>
 </html>

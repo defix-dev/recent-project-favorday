@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
     entry: {
         //post_page: './src/main/resources/static/js/react-dev/postPageEntryPoint.js'
+        leaderboard: './src/main/resources/static/js/react-dev/leaderboardPageEntryPoint.js'
     },
     output: {
         path: path.resolve(__dirname, 'src/main/resources/static/js/react-prod'),

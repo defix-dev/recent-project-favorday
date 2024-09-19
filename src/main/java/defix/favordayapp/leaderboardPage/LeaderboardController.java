@@ -3,6 +3,7 @@ package defix.favordayapp.leaderboardPage;
 import defix.favordayapp.configurations.PageConstants;
 import defix.favordayapp.services.leaderboard.LeaderboardDTO;
 import defix.favordayapp.services.leaderboard.LeaderboardService;
+import defix.favordayapp.services.localization.utils.init.LocalizationLoader;
 import defix.favordayapp.services.redirect.RedirectAdapter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,17 +17,17 @@ import java.util.TreeSet;
 @Controller
 @RequestMapping("/leaderboard")
 public class LeaderboardController {
-    private final LeaderboardService leaderboardService;
+    private final LocalizationLoader loader;
 
     @Autowired
-    public LeaderboardController(LeaderboardService leaderboardService) {
-        this.leaderboardService = leaderboardService;
+    public LeaderboardController(LocalizationLoader loader) {
+        this.loader = loader;
     }
 
     @GetMapping
     public String leaderboard(Model model) {
-        LinkedList<LeaderboardDTO> data =  leaderboardService.getLeaderboardData();
-        model.addAttribute("leaderboardInfo", data);
+        //loader.load(PageConstants.LEADERBOARD, model);
+        loader.load(PageConstants.NAVIGATION, model);
         return RedirectAdapter.changePage(PageConstants.LEADERBOARD);
     }
 }

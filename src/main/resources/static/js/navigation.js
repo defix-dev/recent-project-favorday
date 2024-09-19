@@ -105,8 +105,16 @@ setupLangButton("jpn", "jpn");
 function setupLangButton(buttonId, language) {
     document.querySelector(`#${buttonId}`).addEventListener("click", async () => {
         await changeLanguage(language);
-        location.reload();
+        reloadWithChangeUrl();
     });
+}
+
+function reloadWithChangeUrl() {
+    let pathName = window.location.pathname;
+    pathName = pathName.substring(1);
+    pathName = pathName.substring(pathName.indexOf('/'), pathName.length);
+
+    window.location.pathname = pathName;
 }
 
 async function changeLanguage(language) {
