@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: defix.favordayapp.FavordayAppApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.188 s -- in defix.favordayapp.FavordayAppApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.299 s -- in defix.favordayapp.FavordayAppApplicationTests

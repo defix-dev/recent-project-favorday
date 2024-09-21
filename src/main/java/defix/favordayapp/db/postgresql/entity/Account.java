@@ -39,8 +39,8 @@ public class Account implements UserDetails {
     @Column(name = "password", length = 255)
     private String password;
 
-    @ColumnDefault("1978-01-01")
-    @Column(name = "date")
+    @ColumnDefault("'1978-01-01'")
+    @Column(name = "register_date")
     private LocalDate date;
 
     @ManyToMany(fetch = FetchType.EAGER)
