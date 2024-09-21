@@ -24,7 +24,7 @@ public class Account implements UserDetails {
     private Long id;
 
     @Size(max = 30)
-    @Column(name = "username", length = 30)
+    @Column(name = "username", length = 30) //ch
     private String username;
 
     @Size(max = 15)
