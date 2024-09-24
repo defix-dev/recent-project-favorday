@@ -57,8 +57,12 @@
     flex-direction: column;
     align-items: center;
 
+    .additional-txt {
+      text-align: center;
+    }
+
     .section-panel {
-      width: pxToRem(900px);
+      width: 90%;
       background-color: rgba(1, 1, 1, 0.2);
       margin-top: pxToRem(20px);
       margin-bottom: pxToRem(20px);
@@ -70,11 +74,13 @@
     grid-area: msg4;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-content: space-around;
+    text-align: center;
 
     .create-post-btn {
       @include button_s3_content(20px);
       @include button_s3_bg();
+      white-space: nowrap;
       padding: pxToRem(20px) pxToRem(190px);
       margin-top: pxToRem(30px);
     }
@@ -87,5 +93,32 @@
 
   .additional-txt {
     margin-top: pxToRem(14px);
+  }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-areas:
+            "msg1 msg1"
+            "msg1p msg1p"
+            "msg2 msg2"
+            "msg2p msg2p"
+            "msg3 msg3"
+            "msg4 msg4";
+  }
+
+  .section-panel {
+    border-radius: pxToRem(15px);
+  }
+}
+
+@media (min-width: 993px) {
+  .grid-container {
+    grid-template-areas:
+            "msg1 msg1p"
+            "msg2p msg1p"
+            "msg2p msg2"
+            "msg3 msg3"
+            "msg4 msg4";
   }
 }
