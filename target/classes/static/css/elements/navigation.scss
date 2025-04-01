@@ -17,7 +17,7 @@ html, body {
   align-items: center;
 }
 
-$margin-outside: pxToRem(10px);
+$margin-outside: pxToRem(20px);
 
 header {
   width: 100%;
@@ -113,6 +113,9 @@ header {
     color: white;
     font-weight: 500;
     font-size: pxToRem(16px);
+    background-color: $page-title-stroke;
+    padding: pxToRem(10px) pxToRem(15px);
+    border-radius: $general-radius;
 
     &:hover {
       cursor: pointer;
@@ -135,13 +138,18 @@ header {
     img {
       width: auto;
       height: pxToRem(30px);
+      vertical-align: middle;
     }
   }
 
   &__profile {
+    display: flex;
+    align-items: center;
+
     img {
-      width: pxToRem(40px);
-      height: pxToRem(40px);
+      width: pxToRem(30px);
+      height: pxToRem(30px);
+      vertical-align: middle;
     }
   }
 
@@ -154,25 +162,24 @@ header {
     font-weight: 600;
 
     .mobile-header-icon {
-      width: pxToRem(40px);
-      height: pxToRem(40px);
+      width: pxToRem(35px);
+      height: pxToRem(35px);
+      vertical-align: middle;
     }
 
     .header__logo {
-      margin-left: $margin-outside;
+      margin-left: pxToRem(30px);
     }
 
     .header__profile {
-      margin-right: $margin-outside;
+      margin-right: pxToRem(30px);
     }
   }
 }
 
 @mixin mobile-header-rules {
   header {
-    height: pxToRem(80px);
-    border-bottom-left-radius: pxToRem(40px);
-    border-bottom-right-radius: pxToRem(40px);
+    height: pxToRem(70px);
     border-color: white;
     border-image: radial-gradient(circle, transparent, black);
   }
@@ -185,27 +192,20 @@ header {
 
   .flex-container {
     display: inline-block;
-    margin-right: 0;
-    margin-left: 0;
     width: 100%;
-  }
-
-  .main {
-    margin-left: $margin-outside;
-    margin-right: $margin-outside;
   }
 }
 
 .flex-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: $margin-outside;
-  margin-left: $margin-outside;
-  margin-right: $margin-outside;
+  display: grid;
+  grid-template-columns: pxToRem(250px) 1fr;
+  gap: $margin-outside;
+  max-width: pxToRem(1280px);
+  width: 100%;
+  padding: $margin-outside $margin-outside pxToRem(60px);
 }
 
 .aside {
-  margin-right: $margin-outside;
   transition: filter 0.2s ease-in-out;
   height: pxToRem(500px);
   width: pxToRem(250px);
@@ -224,62 +224,60 @@ header {
     ul {
       list-style: none;
       padding: 0;
-      margin: 0;
       width: auto;
+      margin: pxToRem(10px) 0 0;
     }
 
     &__button {
-      margin-top: pxToRem(14px);
-      width: pxToRem(220px);
+      @include border(0, 0, 0, pxToRem(1px), $aside-nav-stroke);
+      border-radius: 0;
+      padding-bottom: pxToRem(6px);
+      padding-top: pxToRem(5px);
 
-      .nav-icon {
-        width: pxToRem(30px);
-        height: pxToRem(30px);
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: pxToRem(10px);
+      &:first-child {
+        padding-top: 0;
+      }
 
-        &:before {
-          transition: all 0.15s ease-in-out;
-          content: '';
-          position: absolute;
-          display: block;
-          opacity: 0;
-          width: pxToRem(40px);
-          height: pxToRem(40px);
-          right: 50%;
-          top: 50%;
-          transform: scale(1) translate(50%, -50%);
-          background-color: $aside-nav-btn-color;
-          border: pxToRem(1px) solid $aside-nav-stroke;
-          border-radius: pxToRem(10px);
-          z-index: 4;
-        }
+      &:last-child {
+        padding-bottom: 0;
+        border: none;
       }
 
       &:hover {
-        .nav-icon:before {
-          opacity: 1;
+        span {
+          color: $general-color;
+        }
+
+        img {
+          filter: invert(43%) sepia(76%) saturate(2978%) hue-rotate(338deg) brightness(90%) contrast(86%);
         }
       }
     }
 
     &__button a {
-      text-decoration: none;
+      width: pxToRem(220px);
+      height: auto;
       display: flex;
-      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: white;
+      font-size: pxToRem(13px);
 
-      img {
+      .nav-icon img {
         width: pxToRem(30px);
         height: pxToRem(30px);
-        z-index: 5;
+        margin-right: pxToRem(15px);
+        vertical-align: middle;
+        transition: all 0.1s ease-in-out;
       }
 
       span {
-        @include button_s2_content();
-        @include button_s2_bg();
+        text-align: left;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        transition: all 0.1s ease-in-out;
+        font-weight: 500;
       }
     }
   }
@@ -304,10 +302,8 @@ header {
 
 .main {
   transition: filter 0.2s ease-in-out;
-  margin-bottom: pxToRem(60px);
   height: auto;
   width: 100%;
-  max-width: $main-width;
 }
 
 //mobile

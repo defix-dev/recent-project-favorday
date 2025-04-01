@@ -81,12 +81,12 @@ header {
   padding-top: 0.3125rem;
 }
 .header__left {
-  margin-left: 0.625rem;
+  margin-left: 1.25rem;
 }
 .header__right {
   display: flex;
   justify-content: space-around;
-  margin-right: 0.625rem;
+  margin-right: 1.25rem;
 }
 .header .right-item {
   margin-right: 1.875rem;
@@ -101,6 +101,9 @@ header {
   color: white;
   font-weight: 500;
   font-size: 1rem;
+  background-color: #4C3A3A;
+  padding: 0.625rem 0.9375rem;
+  border-radius: 0.625rem;
 }
 .header__language-select-button:hover {
   cursor: pointer;
@@ -119,10 +122,16 @@ header {
 .header__logo img {
   width: auto;
   height: 1.875rem;
+  vertical-align: middle;
+}
+.header__profile {
+  display: flex;
+  align-items: center;
 }
 .header__profile img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  vertical-align: middle;
 }
 .header__mobile-adaptation {
   display: flex;
@@ -133,26 +142,27 @@ header {
   font-weight: 600;
 }
 .header__mobile-adaptation .mobile-header-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.1875rem;
+  height: 2.1875rem;
+  vertical-align: middle;
 }
 .header__mobile-adaptation .header__logo {
-  margin-left: 0.625rem;
+  margin-left: 1.875rem;
 }
 .header__mobile-adaptation .header__profile {
-  margin-right: 0.625rem;
+  margin-right: 1.875rem;
 }
 
 .flex-container {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.625rem;
-  margin-left: 0.625rem;
-  margin-right: 0.625rem;
+  display: grid;
+  grid-template-columns: 15.625rem 1fr;
+  gap: 1.25rem;
+  max-width: 80rem;
+  width: 100%;
+  padding: 1.25rem 1.25rem 3.75rem;
 }
 
 .aside {
-  margin-right: 0.625rem;
   transition: filter 0.2s ease-in-out;
   height: 31.25rem;
   width: 15.625rem;
@@ -171,69 +181,54 @@ header {
 .aside .navigation ul {
   list-style: none;
   padding: 0;
-  margin: 0;
   width: auto;
+  margin: 0.625rem 0 0;
 }
 .aside .navigation__button {
-  margin-top: 0.875rem;
-  width: 13.75rem;
+  border: 0 solid #483C3C;
+  border-right-width: 0;
+  border-bottom-width: 0.0625rem;
+  border-left-width: 0;
+  border-radius: 0;
+  padding-bottom: 0.375rem;
+  padding-top: 0.3125rem;
 }
-.aside .navigation__button .nav-icon {
-  width: 1.875rem;
-  height: 1.875rem;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 0.625rem;
+.aside .navigation__button:first-child {
+  padding-top: 0;
 }
-.aside .navigation__button .nav-icon:before {
-  transition: all 0.15s ease-in-out;
-  content: "";
-  position: absolute;
-  display: block;
-  opacity: 0;
-  width: 2.5rem;
-  height: 2.5rem;
-  right: 50%;
-  top: 50%;
-  transform: scale(1) translate(50%, -50%);
-  background-color: #352929;
-  border: 0.0625rem solid #483C3C;
-  border-radius: 0.625rem;
-  z-index: 4;
+.aside .navigation__button:last-child {
+  padding-bottom: 0;
+  border: none;
 }
-.aside .navigation__button:hover .nav-icon:before {
-  opacity: 1;
+.aside .navigation__button:hover span {
+  color: #D7503E;
+}
+.aside .navigation__button:hover img {
+  filter: invert(43%) sepia(76%) saturate(2978%) hue-rotate(338deg) brightness(90%) contrast(86%);
 }
 .aside .navigation__button a {
-  text-decoration: none;
+  width: 13.75rem;
+  height: auto;
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: white;
+  font-size: 0.8125rem;
 }
-.aside .navigation__button a img {
+.aside .navigation__button a .nav-icon img {
   width: 1.875rem;
   height: 1.875rem;
-  z-index: 5;
+  margin-right: 0.9375rem;
+  vertical-align: middle;
+  transition: all 0.1s ease-in-out;
 }
 .aside .navigation__button a span {
-  font-size: 13px;
-  color: white;
-  font-weight: 500;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
-  padding: 0.6875rem;
-  width: 11.25rem;
-  background-color: #352929;
-  border-radius: 0.5rem;
+  text-align: left;
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  border: 0.0625rem solid transparent;
-  transition: all 0.15s ease-in-out;
-}
-.aside .navigation__button a span:hover {
-  border-color: #483C3C;
+  transition: all 0.1s ease-in-out;
+  font-weight: 500;
 }
 .aside .person-actions {
   width: 13.75rem;
@@ -282,10 +277,8 @@ header {
 
 .main {
   transition: filter 0.2s ease-in-out;
-  margin-bottom: 3.75rem;
   height: auto;
   width: 100%;
-  max-width: 62.1875rem;
 }
 
 @media (max-width: 992px) {
@@ -299,9 +292,7 @@ header {
     display: none;
   }
   header {
-    height: 5rem;
-    border-bottom-left-radius: 2.5rem;
-    border-bottom-right-radius: 2.5rem;
+    height: 4.375rem;
     border-color: white;
     border-image: radial-gradient(circle, transparent, black);
   }
@@ -310,13 +301,7 @@ header {
   }
   .flex-container {
     display: inline-block;
-    margin-right: 0;
-    margin-left: 0;
     width: 100%;
-  }
-  .main {
-    margin-left: 0.625rem;
-    margin-right: 0.625rem;
   }
 }
 @media (min-width: 993px) {
